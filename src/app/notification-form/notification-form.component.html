@@ -1,0 +1,48 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="notificationDetails.name" 
+          class="form-control" 
+          id="name" 
+          name="name" 
+          placeholder="Enter your name"
+          required #name="ngModel">
+      </div>
+      <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
+      <div class="form-group">
+        <label for="email">City</label>
+        <input type="text" [(ngModel)]="notificationDetails.city" 
+          class="form-control" 
+          id="email" 
+          name="email" 
+          placeholder="Enter city name for temperature notification"
+          required #email="ngModel">
+        <div [hidden]="!email.pristine" class="alert alert-danger">City is required</div>
+      </div>
+      <div class="form-group">
+        <label for="email">Temperature (°C)</label>
+        <input type="text" [(ngModel)]="notificationDetails.temp" 
+          class="form-control" 
+          id="temp" 
+          name="temp" 
+          placeholder="Enter your temperature for notification"
+          required #email="ngModel">
+        <div [hidden]="!email.pristine" class="alert alert-danger">Temperature is required</div>
+      </div>
+      <div class="form-group">
+        <label for="email">Channel</label>
+        <input type="text" [(ngModel)]="notificationDetails.channel" 
+          class="form-control" 
+          id="channel" 
+          name="channel" 
+          placeholder="Enter your channel for notification channel"
+          required #email="ngModel">
+        <div [hidden]="!email.pristine" class="alert alert-danger">Notification channel is required</div>
+      </div>
+      <button type="submit" [disabled]="!userForm.form.valid" 
+        class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">City</th>
+            <th scope="col">Temp (°C)</th>
+            <th scope="col">Channel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of notificationDetails">
+            <td>{{ user.name }}</td>
+            <td>{{ user.city }}</td>
+            <td>{{ user.temp }}</td>
+            <td>{{ user.channel }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
